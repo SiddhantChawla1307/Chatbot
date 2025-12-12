@@ -41,10 +41,7 @@ def get_faqs(question: str) -> str:
     resp = requests.post(PPLX_URL, headers=headers, json=payload)
     data = resp.json()
 
-    resp = requests.post(PPLX_URL, headers=headers, json=payload)
-    data = resp.json()
-
-    # standard chat completion shape
+       # standard chat completion shape
     try:
         return data["choices"][0]["message"]["content"]
     except Exception:
@@ -103,4 +100,5 @@ def get_bot_response(user_input: str) -> str:
 
     except Exception:
         return "Sorry, something went wrong."
+
 
