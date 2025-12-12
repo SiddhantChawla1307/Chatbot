@@ -66,7 +66,7 @@ responses = {
 def get_intent(user_input):
     msg = user_input.lower().strip()
 
-    # ✅ SAFE direct checks first (no NLTK)
+    # SAFE direct checks first (no NLTK)
     if any(word in msg for word in ["hello", "hi", "hey"]):
         return "greeting"
     if "how are you" in msg:
@@ -76,7 +76,7 @@ def get_intent(user_input):
     if "name" in msg:
         return "name"
 
-    # ✅ Only then try NLTK token logic
+    # Only then try NLTK token logic
     try:
         tokens = preprocess(msg)
         if "hello" in tokens or "hi" in tokens or "hey" in tokens:
@@ -103,3 +103,4 @@ def get_bot_response(user_input: str) -> str:
 
     except Exception:
         return "Sorry, something went wrong."
+
