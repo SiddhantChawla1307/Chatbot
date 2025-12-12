@@ -1,7 +1,5 @@
 import nltk
 from ai_client import get_faqs
-#nltk.download('punkt') #snetence-word tokenizer model
-#nltk.download('wordnet') #English dictionary database
 
 import random
 from nltk.stem import WordNetLemmatizer #lemmatizer converts words into base form
@@ -42,6 +40,7 @@ while True:
     else:
         # AI Responses
         print(f"Bot:", get_faqs(user_input))
+
 
 
 
